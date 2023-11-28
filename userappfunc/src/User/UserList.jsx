@@ -3,6 +3,7 @@ import React from 'react'
 function UserList(props) {
 
     let selectUser=(user)=>{
+        console.log(user)
         props.getUsers(user)
     }
 
@@ -24,7 +25,7 @@ function UserList(props) {
         <tbody>
             {
                 users?.map((user,index)=>{
-                    return <tr key={index} onMouseOver={selectUser.bind(user)}>
+                    return <tr key={index} onMouseOver={selectUser.bind(null,user)}>
                             <td>{user.id}</td>
                             <td>{user.firstName}</td>
                             <td>{user.email}</td>

@@ -1,21 +1,21 @@
 import React from 'react'
 
 function UserDetail(props) {
-    let {allUser}=props
+    let {selUser}=props
    
   return (
         <>
         <h1>User Details</h1>
-        <pre>{JSON.stringify(allUser)}</pre>
+        <pre>{JSON.stringify(selUser)}</pre>
 
-        {/* <div className='card'>
+         <div className='card'>
             <div className='card-header'>
-              <img src={user.image} alt="" /> 
-              <h3>{user.firstName}</h3> 
+              <img src={selUser.image} alt="" /> 
+              <h3>{selUser.firstName}</h3> 
             </div>
 
 
-        </div> */}
+        </div> 
         </>
   )
 }

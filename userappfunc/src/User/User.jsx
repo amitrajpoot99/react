@@ -5,7 +5,7 @@ import UserDetail from './UserDetail'
 
 function User() {
     let [userData,setUserData]=useState({})
-    let[selUser,setSelUser]=useState()
+    let[selUser,setSelUser]=useState({})
 
    let getSelectedUser=(user)=>{
         setSelUser(user)
@@ -30,7 +30,7 @@ function User() {
             <div className='row'>
                 <div className='col-8'>
                     {
-                        Object.keys.length>0? <>
+                        Object.keys(userData).length>0? <>
                         <UserList getUsers={getSelectedUser} allUsers={userData.users} />
                         </>
                         :
@@ -40,7 +40,7 @@ function User() {
 
                 <div className='col-4'>
                     {
-                        Object.keys.length>0?<><UserDetail selUser={selUser}/></>:<h3>No Data</h3>
+                        Object.keys(selUser).length>0?<><UserDetail selUser={selUser}/></>:<h3>No Data</h3>
                     }
 
                 </div>
